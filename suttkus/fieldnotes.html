@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulane University Biodiversity Research Institute</title>
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <style>
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-section img {
+            margin-right: 20px;
+        }
+        .header-section .description {
+            max-width: 70%;
+        }
+        .tree-node, .tree-node ul {
+            list-style-type: none; /* Remove default list style */
+            margin: 0;
+            padding: 0;
+        }
+        .tree-node > li > ul {
+            padding-left: 20px; /* Increase indentation for child nodes */
+        }
+        .tree-node {
+            padding-left: 10px; /* Align ul with the left border */
+        }
+        .tree-node li {
+            margin: 5px 0; /* Space between items */
+        }
+        .expand-collapse {
+            vertical-align: middle; /* Align icon with text */
+            margin-right: 5px;
+        }
+        .node-content {
+            vertical-align: middle; /* Align text with icon */
+        }
+    </style>
+</head>
+<body>
+<div id="CONTAINERWRAP">
+    <div id="CONTAINER">
+        <div id="HEADERCONTAINER">
+            <div id="HEADER">
+                <div id="HEADERLOGOLEFT">
+                    <a title="TUBRI" href="../">
+                        <img alt="TUBRI" src="../images/tubri_logo2.jpg" align="left">
+                    </a>
+                    <h1>Tulane University Biodiversity Research Institute</h1>
+                </div>
+                <div id="HEADERLOGORIGHT"></div>
+                <div id="MENU">
+                    <ul>
+                        <li><a>TUBRI</a>
+                            <ul>
+                                <li><a href="../">Home</a></li>
+                                <li><a href="../history.html">History</a></li>
+                                <li><a href="../facilities.html">Facilities</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a>Departments</a>
+                            <ul>
+                                <li><a href="../fishes">Royal D. Suttkus Fish Collection</a></li>
+                                <li><a href="../informatics">Biodiversity Informatics</a></li>
+                                <li><a href="../tszb">Tulane Studies in Zoology and Biology</a></li>
+                                <li><a href="../occpapers">Occasional Papers of the Tulane Museum of Natural History</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a>Research</a>
+                            <ul>
+                                <li><a href="https://www.fishesoflouisiana.org">Fishes of Louisiana</a></li>
+                                <li><a href="https://www.geo-locate.org/">GEOLocate</a></li>
+                                <li><a href="https://www.fishnet2.net">FishNet 2</a></li>
+                                <li><a href="https://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1027830">Intelligent Fish Identification System</a></li>
+                                <li><a href="https://www.tubri.org/museum/ictiobin">Ictiobinae</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a>Contacts</a>
+                            <ul>
+                                <li><a href="../contacts">Personnel Directory</a></li>
+                                <li><a href="../contacts/directions.html">Directions</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="CONTENT">
+            <div id="FRONTCONTAINTER">
+                <div id="FRONTMAIN">
+                    <div id="FRONTFEATURECONTAINER">
+                        <div id="FRONTFEATUREFULL">
+                            <div id="FRONTFEATURECONTENT">
+                                <div class="header-section">
+                                    <div class="description">
+                                        <h2>The Royal D. Suttkus Field Notes Project</h2>
+                                        <p>
+                                            Below is an alphabetical list of surnames, extracted from our database, of individuals who made collections with Royal D. Suttkus which were deposited in the R.D. Suttkus Fish Collection. Each surname is listed alone and (in expanded view) in all of the variations that the surname appears in our database (i.e., accompanying initials and punctuation). Click on “Print View” to view a more complete description of the collection event, which should help you to determine if the collector named is indeed you. Once you have identified all of the collections that you assisted with, please either scan or photocopy your notes and send them to us by email (ldomino@tulane.edu) or regular mail: Tulane University Biodiversity Research Institute, Attn: RDS Field Notes Project, 3705 Main Street, Belle Chasse, LA 70037. Please help us to spread the word about this project to others whose names you recognize in this list. Many thanks in advance!
+                                        </p>
+                                    </div>
+                                    <img src="../images/sutt_fn.jpg" alt="Royal D. Suttkus">
+                                </div>
+                                <div id="scrollDiv" style="border: thin solid #00331A; width:auto; height: 350px; overflow: auto; margin-top: 10px;">
+                                    <ul id="treeCollectors" class="tree-node">
+                                        <!-- Tree nodes will be inserted here by JavaScript -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="FOOTER">
+            <center><img src="../images/tu_logo_1.png"></center>
+        </div>
+    </div>
+</div>
+<script src="static_links.js"></script>
+<script src="fieldnotes.js"></script>
+</body>
+</html>

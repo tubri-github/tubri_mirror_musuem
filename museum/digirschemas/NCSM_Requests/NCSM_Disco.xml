@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<disco xmlns="http://www.tubri.org/museum/digirschemas"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.tubri.org/museum/digirschemas disco.xsd">
+  <resources>
+    <resource>
+      <name>North Carolina State Museum of Natural Sciences Fishes Collection</name>
+      <code>FishesDwC2</code>
+      <file fileName="response_0.xml" />
+      <file fileName="response_1.xml" />
+      <file fileName="response_2.xml" />
+      <file fileName="response_3.xml" />
+      <file fileName="response_4.xml" />
+      <file fileName="response_5.xml" />
+      <file fileName="response_6.xml" />
+      <file fileName="response_7.xml" />
+      <file fileName="response_8.xml" />
+      <file fileName="response_9.xml" />
+      <file fileName="response_10.xml" />
+      <file fileName="response_11.xml" />
+      <file fileName="response_12.xml" />
+      <file fileName="response_13.xml" />
+      <file fileName="response_14.xml" />
+      <file fileName="response_15.xml" />
+      <file fileName="response_16.xml" />
+      <file fileName="response_17.xml" />
+      <file fileName="response_18.xml" />
+      <file fileName="response_19.xml" />
+      <file fileName="response_20.xml" />
+      <file fileName="response_21.xml" />
+      <file fileName="response_22.xml" />
+      <file fileName="response_23.xml" />
+      <file fileName="response_24.xml" />
+      <file fileName="response_25.xml" />
+      <file fileName="response_26.xml" />
+      <file fileName="response_27.xml" />
+      <file fileName="response_28.xml" />
+      <file fileName="response_29.xml" />
+      <file fileName="response_30.xml" />
+      <file fileName="response_31.xml" />
+      <file fileName="response_32.xml" />
+      <file fileName="response_33.xml" />
+      <file fileName="response_34.xml" />
+      <file fileName="response_35.xml" />
+      <file fileName="response_36.xml" />
+      <file fileName="response_37.xml" />
+      <file fileName="response_38.xml" />
+      <file fileName="response_39.xml" />
+      <file fileName="response_40.xml" />
+      <file fileName="response_41.xml" />
+      <file fileName="response_42.xml" />
+      <file fileName="response_43.xml" />
+      <file fileName="response_44.xml" />
+      <file fileName="response_45.xml" />
+      <file fileName="response_46.xml" />
+      <file fileName="response_47.xml" />
+      <file fileName="response_48.xml" />
+      <file fileName="response_49.xml" />
+      <file fileName="response_50.xml" />
+    </resource>
+  </resources>
+</disco>

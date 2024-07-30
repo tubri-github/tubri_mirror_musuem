@@ -1,0 +1,371 @@
+/* CSS RESET */
+
+html, body, div, span,
+
+applet, object, iframe,
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+
+a, abbr, acronym, address, big, cite, code,
+
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+
+small, strike, sub, sup, tt, var,
+
+dd, dl, dt, li, ol, ul,
+
+fieldset, form, label, legend,
+
+ caption, tbody, tfoot, thead,  th
+{
+	margin: 0px;
+
+	padding: 0px;
+
+	border: 0px;
+
+	font-weight: inherit;
+
+	font-style: inherit;
+
+	line-height: 1.5;
+}
+
+a, input
+{
+	outline: none;
+}
+
+a img, :link img, :visited img
+{
+	border: 0px;
+}
+
+a:link { color: #CA6500; text-decoration:none; }
+
+a:visited { color: #CA6500; text-decoration:none; }
+
+a:hover { color: #CA6500; text-decoration:underline; }
+
+a:active { color: #CA6500; text-decoration:none; }
+
+table 
+{
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+th
+{
+	font-weight: bold;
+	font-size: .8em;
+}
+ul
+{
+	margin-left: 25px;
+	text-indent: .3em;
+	
+	font-size: 12px;
+}
+ul li
+{
+	list-style-image: url(../graphics/bullet.gif);
+}
+
+q:before, q:after,
+
+blockquote:before, blockquote:after 
+{
+	content: "";
+}
+
+h1
+{
+    font-size: 1.1em;
+
+    font-weight: bold; 
+
+    text-transform: capitalize;
+
+    line-height: 1.3;
+
+    margin: 10px 0px 15px 5px;
+
+    font-family: Georgia, Times, serif;
+
+    color: #0E1A0E;
+}
+
+/*END CSS RESET*/
+
+body
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	background-color: #405E4D;
+    
+    text-align: center;
+    font-family: verdana, arial, sans-serif;
+}
+
+
+#containerDiv
+{
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 900px;
+    
+    background-color: White;
+}
+
+#bannerDiv
+{
+	width: 100%;
+	height: 120px;
+	
+	background-color: Transparent;
+	
+	text-align: left;
+}
+
+#logoDiv
+{
+	float: left;
+	position: relative;
+	top: 4px;
+	left: 20px;
+	
+	width: 212px;
+	height: 112px;
+	
+	background-color: Transparent;
+}
+
+#tabsDiv
+{
+	width: 100%;
+	height: 30px;
+	
+	text-align: left;
+	
+	background-color: #999966;
+}
+
+#tabsSleeveDiv
+{
+	position: relative;
+	top: 4px;
+	height: 27px;
+	width: 100%;
+	
+	background-color: #999966; /*#CCCC99*/
+}
+
+#tabsBandDiv
+
+{
+	width: 100%;
+	height: 3px;
+	
+	border-top: solid 1px #8D846D;
+	border-bottom: solid 1px #8D846D;
+	
+	background-color: #CABC9C;
+}
+
+#tabs
+{	
+	list-style: none;
+	text-indent: 0em;
+    font-weight: normal;
+    
+    margin-left: 5px;
+}
+
+#tabs li
+{
+	width: 120px;
+	height: 27px;
+
+    background-image: url(../graphics/tab.gif);
+    list-style-image: none;
+    float: left;
+    
+    text-align: center;
+}
+
+#tabs a
+{
+    display: block;
+    
+    padding: 6px 0px 7px 0px;
+    
+    font-size: 10px;
+    
+    line-height: 13px;
+    
+    text-decoration: none;
+
+    color: Black;
+    
+    border-width: 0px;
+}
+
+#tabs a:hover
+{
+    text-decoration: none;
+    color: Black;
+    
+    background: url(../graphics/tab_hover.gif);
+}
+
+#mainBodyDiv
+{
+	width: 100%;
+	
+	background-color: Transparent;
+	
+	text-align: left;
+}
+
+#mainBodyDiv p, span
+{
+	margin: 0px 0px 12px 5px;
+	
+	font-size: 12px;
+	
+	line-height: 1.5;
+}
+
+#footerDiv
+{
+	width: 100%;
+	height: 90px;
+	
+	background-color: #CABC9C;
+	
+	text-align: left;
+    font-size: 10px;
+}
+
+#footerDiv p
+{
+	line-height: 1.2;
+	padding: 3px 0px 0px 5px;
+}
+
+#footerDiv a
+{
+    text-decoration: none;
+
+    color: #405E4D;
+}
+
+
+
+#footerDiv a:hover 
+{
+    text-decoration: underline;
+
+    color: #405E4D;
+}
+
+
+
+#footerDiv a:active 
+{
+    color: #995B00;
+}
+
+
+
+#footerDiv a:visited
+{   
+    color: #995B00;
+}
+
+#searchDiv
+{
+	float: left;
+	position: relative;
+	top: 4px;
+	left: 267px;
+	
+	overflow: hidden;
+	
+	width: 415px;
+	height: 110px;
+	
+	background-color: #FFF6E2;
+	border: solid 1px #CABC9C;
+}
+
+#mappingAppTbl a 
+{
+	line-height: 0;
+}
+
+#mappingAppTbl span
+{
+	margin: 0px 0px 0px 0px;
+	
+	line-height: 1.3;
+}
+
+#listDiv a
+{
+	font-style: italic;
+}
+
+.separator
+{
+	width: 100px;
+	height: 5px;
+}
+
+.button
+{
+	background: #999966;
+
+  color: #FFF;
+
+  font-weight: bold;
+
+  font-size: 12px;
+
+  line-height: 12px;
+
+  padding: 3px;
+
+  border-top: 1px solid #81b650;
+
+  border-left: 1px solid #81b650;
+
+  border-bottom: 1px solid #405E4D;
+
+  border-right: 1px solid #405E4D;
+}
+
+.contentDiv
+{
+	background-color: #FFF6E2;
+	
+	border: solid 1px #CABC9C;
+	
+	overflow: auto;
+}
+
+.looseText
+{
+	font-family: verdana, arial, sans-serif;
+	
+	font-size: 12px;
+}
+
+.darkGreenHRNoShade
+{
+	color: #405E4D;
+	border: thin solid #405E4D;
+}

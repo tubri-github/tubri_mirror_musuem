@@ -1,0 +1,95 @@
+﻿body
+{
+    background-color:White; color:Black; font-family:Calibri
+}
+
+h2
+{
+   font-family: "ITC Avant Garde Gothic Std","URW Gothic L","Century Gothic", "Avant Garde", "Trebuchet MS", sans-serif;
+   text-align:center;
+   
+}
+
+.page_wrapper
+{
+    width: 1330px; margin-left: auto; margin-right:auto;
+}
+
+.left-content
+{
+    padding:12px; 
+    width: 282px; 
+    margin-top: 10px;
+    margin-left: 0px; 
+    margin-right:auto;
+    float:left;
+}
+
+.left_page-title 
+{
+    font-family: "ITC Avant Garde Gothic Std","URW Gothic L","Century Gothic", "Avant Garde", "Trebuchet MS", sans-serif;
+    font-weight: normal; 
+    font-size: 24px;
+    color:#1c4a9e;
+
+}
+.left_navmenu
+{
+    font-family: "ITC Avant Garde Gothic Std","URW Gothic L","Century Gothic", "Avant Garde", "Trebuchet MS", sans-serif;
+    font-weight: normal; 
+    font-size: 16px;
+    color:#1c4a9e; 
+}
+
+.left_navmenu a { color: #1c4a9e; }
+
+.head_content
+{
+    text-align:center;
+    width:750px;
+    margin-left: 320px; 
+    margin-right:auto;
+    
+    color:White; 
+    background-color: #0067ab; 
+    font-size: 40px; 
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+
+.main_content
+{
+    text-align:left;
+    width: 750px; 
+    margin-left: 320px; 
+    margin-right:auto;
+    
+    background-color:#eeeeca; 
+    color:Black; 
+    padding-bottom:24px; 
+    padding-top:6px;
+}
+
+.main_content p
+{
+    padding-right:10px;
+    padding-left:10px;
+}
+
+.donate
+{
+    text-align:left; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 328px;
+}
+.page_footer
+{
+    padding:10px;
+}
+
+img
+{
+    border:0;
+}
+

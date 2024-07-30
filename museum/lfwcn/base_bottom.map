@@ -1,0 +1,19 @@
+		##BEGIN BOTTOM##
+		CLASS
+			LABEL
+				TYPE TRUETYPE
+				FONT verdana
+				OUTLINECOLOR 255 255 255
+				SIZE 7
+				COLOR 0 0 0
+				POSITION AUTO
+				PARTIALS FALSE
+			END
+			STYLE
+#				SYMBOL graphics/point.gif
+SYMBOL ../graphics/point.gif
+			END
+		END
+  END
+  
+END #End of mapfile

@@ -1,0 +1,1313 @@
+#
+# Start of map file
+#
+MAP
+	NAME LA
+	STATUS ON
+	SIZE 500 398
+	EXTENT -94.08 28.8775 -88.794 33.1305
+	UNITS dd
+	SHAPEPATH "data"
+	#Anything similar to this is for the bat_top.map, leave it in and update to match uncommented version
+	#when appropriate.
+	#SHAPEPATH "../data"
+	IMAGECOLOR 0 147 255#125 200 255
+	FONTSET "../fonts/fonts.list"
+	#FONTSET "../../fonts/fonts.list"
+	TEMPLATEPATTERN 'Sear'
+  
+	IMAGETYPE PNG24
+	#
+	# Start of symbol definitions
+	#
+	SYMBOL
+		NAME 'circle'
+		TYPE ELLIPSE
+		POINTS 1 1 END
+		FILLED TRUE
+	END
+
+	SYMBOL
+		NAME 'star'
+		TYPE VECTOR
+		FILLED TRUE
+		POINTS
+			0 .375
+			.35 .375
+			.5 0
+			.65 .375
+			1 .375
+			.75 .625
+			.875 1
+			.5 .75
+			.125 1
+			.25 .625
+		END
+	END 
+  
+	SYMBOL
+		NAME 'square'
+		TYPE VECTOR
+		FILLED TRUE
+		POINTS
+			0 1
+			0 0
+			1 0
+			1 1
+			0 1
+		END
+	END
+  
+	SYMBOL
+		NAME 'diamond'
+		TYPE VECTOR
+		FILLED TRUE
+		POINTS
+			1 2
+			0 1
+			1 0
+			2 1
+			1 2
+		END
+	END
+  
+	SYMBOL
+		NAME 'triangle'
+		TYPE VECTOR
+		FILLED TRUE
+		POINTS
+			0 4
+			2 0
+			4 4
+			0 4
+		END
+	END	
+	
+	SYMBOL
+		NAME 'bar-train'
+		TYPE CARTOLINE
+		LINECAP butt
+		LINEJOIN round
+		LINEJOINMAXSIZE 3
+		STYLE
+			2 10 2 10
+		END
+	END
+	
+	SYMBOL
+		NAME 'cartoline'
+		TYPE CARTOLINE
+		LINECAP butt
+		LINEJOIN round
+		LINEJOINMAXSIZE 3
+	END
+
+	#
+	# Start of web interface definition (including WMS enabling metadata)
+	#
+	WEB
+		TEMPLATE Search.aspx
+		MINSCALE 1500
+		MAXSCALE 256755497
+		#IMAGEPATH '.'
+		IMAGEPATH 'tmp/'
+		#IMAGEURL ''
+		IMAGEURL 'tmp/'
+		METADATA
+			WMS_TITLE "Louisiana Fish and Wildlife Conservation Network, Result Map"
+			WMS_ABSTRACT "This is an page displays results of a query as points on the map."
+			WMS_ACCESSCONSTRAINTS "none"
+	  
+			WMS_ONLINERESOURCE "http://www.esri.com/metadata/esriprof80.html"
+	  
+			WMS_SRS "EPSG:4326"
+		END
+	END
+  
+	#
+	# Start of reference map
+	#
+	REFERENCE
+		IMAGE graphics/reference.png
+		#IMAGE ../graphics/reference.png
+		EXTENT -94.08 28.8775 -88.794 33.1305
+		SIZE 220 175
+		STATUS ON
+		MINBOXSIZE 5
+		MAXBOXSIZE 150
+		COLOR 255 0 0
+		OUTLINECOLOR 0 0 0
+		MARKERSIZE 8
+		MARKER 'star'
+	END
+  
+	#
+	# Start of legend
+	#
+	LEGEND
+		KEYSIZE 18 12
+		LABEL
+			TYPE TRUETYPE
+			FONT verdana
+			SIZE 8
+			COLOR 0 0 0
+		END
+		STATUS ON
+	END
+  
+	#
+	# Start of Scalebar
+	#
+	SCALEBAR
+		BACKGROUNDCOLOR 255 255 255
+		IMAGECOLOR 102 102 102
+		OUTLINECOLOR 0 0 0
+		LABEL
+			COLOR 255 255 255
+			SIZE TINY
+		END
+		STYLE 0
+		SIZE 100 4
+		COLOR 200 200 200
+		UNITS MILES
+		INTERVALS 2
+		#TRANSPARENT TRUE
+		STATUS ON
+	END
+  
+	#
+	# Start of layer definitions
+	# Leave the 'CS NAME:' comments in, they are to be used
+	# by the .aspx.cs code
+	#
+	LAYER
+		NAME background
+		TYPE POLYGON
+		DATA backgd
+		STATUS DEFAULT
+		CLASSITEM 'STATE_NAME'
+		TRANSPARENCY ALPHA
+		CLASS
+			#NAME 'Regional Background'
+			EXPRESSION /./
+			STYLE
+				#OUTLINECOLOR 110 110 110
+				COLOR 225 225 225
+				ANTIALIAS TRUE
+			END
+		END
+		METADATA
+			WMS_TITLE "U.S. States (Clipped)"
+			WMS_ABSTRACT "U.S. States (Detailed & Clipped) represents the fifty states and the District of Columbia of the United States."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+		NAME background_boundary
+		TYPE LINE
+		DATA backgd
+		STATUS DEFAULT
+		TRANSPARENCY ALPHA
+		CLASSITEM 'STATE_NAME'
+		REQUIRES "[background]"
+		CLASS
+			#NAME 'Regional Background'
+			EXPRESSION /./
+			STYLE
+				SYMBOL 'cartoline'
+				COLOR 110 110 110
+				ANTIALIAS TRUE
+			END
+		END
+		METADATA
+			WMS_TITLE "U.S. States (Clipped)"
+			WMS_ABSTRACT "U.S. States (Detailed & Clipped) represents the fifty states and the District of Columbia of the United States."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+		#CS NAME: Counties
+		NAME counties
+		TYPE POLYGON
+		DATA la_cnty
+		STATUS DEFAULT
+		REQUIRES "!([hucs] OR [ecoregions])"
+		CLASSITEM 'NAME'
+		LABELITEM 'NAME'
+		LABELMAXSCALE 700000
+		CLASS
+			NAME 'Counties'
+			EXPRESSION /./
+			
+			STYLE
+				#OUTLINECOLOR 110 110 110
+				COLOR 204 204 153
+			END
+			LABEL
+				TYPE TRUETYPE
+				FONT courier-bold
+				SIZE 8
+				OUTLINECOLOR 255 255 255
+				COLOR 0 0 0
+				POSITION auto
+				PARTIALS FALSE
+			END
+		END
+		METADATA
+			WMS_TITLE "LA Counties"
+			WMS_ABSTRACT "LA Counties represents the counties of the State of Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+		NAME counties_boundary
+		TYPE LINE
+		DATA la_cnty
+		STATUS DEFAULT
+		REQUIRES "[counties]"
+		CLASSITEM 'NAME'
+		LABELITEM 'NAME'
+		TRANSPARENCY ALPHA
+		CLASS
+			#NAME 'Counties'
+			EXPRESSION /./
+			
+			STYLE
+				SYMBOL 'cartoline'
+				COLOR 110 110 110
+				ANTIALIAS TRUE
+			END
+		END
+		METADATA
+			WMS_TITLE "LA Counties"
+			WMS_ABSTRACT "LA Counties represents the counties of the State of Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: HUCS
+		NAME hucs
+		TYPE POLYGON
+		DATA la_hucs
+		STATUS OFF
+		
+		CLASSITEM 'CAT_NAME'
+		LABELITEM 'CAT_NAME'
+		LABELMAXSCALE 400000
+		CLASS
+			NAME 'HUCS'
+			EXPRESSION /./
+			STYLE
+				#OUTLINECOLOR 110 110 110
+				COLOR 190 210 255
+			END
+			LABEL
+				TYPE TRUETYPE
+				FONT courier-bold
+				SIZE 8
+				OUTLINECOLOR 255 255 255
+				COLOR 0 0 0
+				MINFEATURESIZE 150
+				POSITION auto
+				#PARTIALS FALSE
+			END
+		END
+		METADATA
+			WMS_TITLE "LA HUCS"
+			WMS_ABSTRACT "LA HUCS represents the Hydrologic Unit Codes of the State of Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+		NAME hucs_boundary
+		TYPE LINE
+		DATA la_hucs
+		STATUS DEFAULT
+		TRANSPARENCY ALPHA
+		CLASSITEM 'CAT_NAME'
+		LABELITEM 'CAT_NAME'
+		REQUIRES "[hucs]"
+		CLASS
+			#NAME 'HUCS'
+			EXPRESSION /./
+			STYLE
+				SYMBOL 'cartoline'
+				COLOR 110 110 110
+				ANTIALIAS TRUE
+			END
+		END
+		METADATA
+			WMS_TITLE "LA HUCS"
+			WMS_ABSTRACT "LA HUCS represents the Hydrologic Unit Codes of the State of Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: Eco-regions
+		NAME ecoregions
+		TYPE POLYGON
+		DATA la_eco
+		STATUS OFF
+		
+		CLASSITEM 'LEVEL4_NAM'
+		LABELITEM 'LEVEL4_NAM'
+		LABELMAXSCALE 400000	
+		CLASS
+			NAME 'Eco-regions'
+			EXPRESSION /./
+			STYLE
+				#OUTLINECOLOR 110 110 110
+				COLOR 194 228 242
+			END
+			LABEL
+				TYPE TRUETYPE
+				FONT courier-bold
+				SIZE 8
+				OUTLINECOLOR 255 255 255
+				COLOR 0 0 0
+				MINFEATURESIZE 150
+				POSITION auto
+				#PARTIALS FALSE
+			END
+		END
+		METADATA
+			WMS_TITLE "LA ECO-REGIONS"
+			WMS_ABSTRACT "LA ECO-REGIONS represents the Ecological Regions of the State of Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+		NAME ecoregions_boundary
+		TYPE LINE
+		DATA la_eco
+		STATUS DEFAULT
+		REQUIRES "[ecoregions]"
+		TRANSPARENCY ALPHA
+		CLASSITEM 'LEVEL4_NAM'
+		LABELITEM 'LEVEL4_NAM'	
+		CLASS
+			#NAME 'Eco-regions'
+			EXPRESSION /./
+			STYLE
+				SYMBOL 'cartoline'
+				COLOR 110 110 110
+				ANTIALIAS TRUE
+			END
+		END
+		METADATA
+			WMS_TITLE "LA ECO-REGIONS"
+			WMS_ABSTRACT "LA ECO-REGIONS represents the Ecological Regions of the State of Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: Wildlife refuges & parks
+		NAME wildlife
+		TYPE POLYGON
+		DATA la_wlrg
+		STATUS DEFAULT
+		
+		CLASSITEM 'LIT'
+		LABELITEM 'ORGNAME'
+		LABELMAXSCALE 700000	
+		CLASS
+			NAME 'Wildlife refuges & parks'
+			EXPRESSION /./
+			STYLE
+				OUTLINECOLOR 0 207 162
+				COLOR 0 207 162
+			END
+			LABEL
+				TYPE TRUETYPE
+				FONT courier-bold
+				SIZE 8
+				OUTLINECOLOR 255 255 255
+				COLOR 0 86 66
+				MINFEATURESIZE 130
+				POSITION auto
+				PARTIALS FALSE
+			END
+		END
+		METADATA
+			WMS_TITLE "LA Wildlife refuges & parks"
+			WMS_ABSTRACT "LA Wildlife refuges & parks represents the National Parks and Wildlife Refuges of the State of Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: Major rivers & water bodies
+		NAME water_polygons
+		TYPE POLYGON
+		TILEINDEX "la_waterply.shp"
+		TILEITEM "LOCATION"
+		STATUS DEFAULT
+		CLASSITEM 'ID'
+		CLASS
+			MINSCALE 700000
+			NAME 'Major rivers & water bodies'
+			EXPRESSION ('[LANDNAME]' == 'Lake Pontchartrain')#/[Ll]ake [Pp]ontchartrain/#/^.*[Ll]ake.*$/
+			STYLE
+				OUTLINECOLOR 0 147 255#64 101 235
+				COLOR 0 147 255#151 219 242
+			END
+		END
+		CLASS
+			MAXSCALE 700000
+			NAME 'Major rivers & water bodies'
+			EXPRESSION /./#/^.*[Ll]ake.*$/
+			STYLE
+				OUTLINECOLOR 0 147 255#64 101 235
+				COLOR 0 147 255#151 219 242
+			END
+		END
+		CLASS
+			MINSCALE 700000
+			EXPRESSION (('[LANDNAME]' == 'Toledo Bend Reservoir') || ('[LANDNAME]' == 'Mississippi River') || ('[LANDNAME]' == 'Mississippi River') || ('[LANDNAME]' == 'Pearl River') || ('[LANDNAME]' == 'Sabine River') || ('[LANDNAME]' == 'Sabine Lake') || ('[LANDNAME]' == 'Red River'))#/[Tt]oledo.*$|[Mm]ississippi.*$|[Pp]earl.*$|[Ss]abine.*$|[Rr]ed.*$/
+			STYLE
+				OUTLINECOLOR 0 147 255#64 101 235
+				COLOR 0 147 255#151 219 242
+			END
+		END
+			
+		
+		METADATA
+			WMS_TITLE "LA Major Water"
+			WMS_ABSTRACT "LA Major Water represents areas that are major water features within the State of Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: Streams
+		NAME streams
+		TYPE LINE
+		TILEINDEX "la_rivers.shp"
+		TILEITEM "LOCATION"
+		MAXSCALE 350000
+		STATUS DEFAULT
+		CLASSITEM 'TLID'
+		SYMBOLSCALE 250000
+		TRANSPARENCY ALPHA
+		CLASS
+			NAME 'Streams'
+			EXPRESSION /./
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 0 147 255#23 69 225
+				MINWIDTH 1
+				MAXWIDTH 20
+				ANTIALIAS TRUE
+			END
+		END
+		METADATA
+			WMS_TITLE "Louisiana Rivers"
+			WMS_ABSTRACT "Louisiana Rivers represents streams and rivers within Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: Rail roads
+		NAME rails
+		TYPE LINE
+		TILEINDEX "la_railroads.shp"
+		TILEITEM "LOCATION"
+		MAXSCALE 75000 #3365879
+		STATUS DEFAULT
+		CLASSITEM 'TLID'
+		TRANSPARENCY ALPHA
+		CLASS
+			NAME 'Rail roads'
+			EXPRESSION /./
+			STYLE
+				SYMBOL 'bar-train'
+				COLOR 98 98 98
+				SIZE 9
+				ANTIALIAS TRUE
+			END
+			STYLE
+				SYMBOL 'circle'
+				COLOR 98 98 98
+				SIZE 5
+				ANTIALIAS TRUE
+			END
+			STYLE
+				SYMBOL 'circle'
+				COLOR 255 255 255
+				SIZE 1
+				ANTIALIAS TRUE
+			END
+		END
+		METADATA
+			WMS_TITLE "Louisiana Rivers"
+			WMS_ABSTRACT "Louisiana Rivers represents streams and rivers within Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+		NAME roads_outline
+		TYPE LINE
+		TILEINDEX "la_roads.shp"
+		TILEITEM "LOCATION"
+		STATUS DEFAULT
+		CLASSITEM 'TLID'
+		SYMBOLSCALE 75000
+		MAXSCALE 75000
+		TRANSPARENCY ALPHA
+		CLASS
+			EXPRESSION /./
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 90 90 90
+				MINWIDTH 1
+				MAXWIDTH 23
+				ANTIALIAS TRUE
+			END
+		END
+
+		METADATA
+			WMS_TITLE "Louisiana Major Roads"
+			WMS_ABSTRACT "Louisiana Major Roads represents interstate, U.S., and state highways and other major thoroughfares within Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: Roads
+		NAME roads
+		TYPE LINE
+		TILEINDEX "la_roads.shp"
+		TILEITEM "LOCATION"
+		STATUS DEFAULT
+		CLASSITEM 'TLID'
+		SYMBOLSCALE 70000
+		MAXSCALE 75000
+		TRANSPARENCY ALPHA
+		CLASS
+			NAME 'Roads'
+			EXPRESSION /./
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 90 90 90
+				MINWIDTH 3
+				MAXWIDTH 25
+				ANTIALIAS TRUE
+			END
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 214 255 223
+				MINWIDTH 1
+				MAXWIDTH 23
+				ANTIALIAS TRUE
+			END
+		END
+
+		METADATA
+			WMS_TITLE "Louisiana Major Roads"
+			WMS_ABSTRACT "Louisiana Major Roads represents interstate, U.S., and state highways and other major thoroughfares within Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+		NAME hwys_outline
+		TYPE LINE
+		TILEINDEX "la_roads.shp"
+		TILEITEM "LOCATION"
+		STATUS DEFAULT
+		CLASSITEM 'FENAME'
+		SYMBOLSCALE 130000
+		MAXSCALE 150000
+		TRANSPARENCY ALPHA
+		CLASS
+			EXPRESSION /^U(nited )?S(tates)? H(igh)?wa?y [0-9]+$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ +\(Bus\)$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *N(orth)?$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *S(outh)?$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *E(ast)?$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *W(est)?$/
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 100 100 100
+				MINWIDTH 2
+				MAXWIDTH 33
+				ANTIALIAS TRUE
+			END
+		END
+		CLASS
+			EXPRESSION /^H(igh)?wa?y *[0-9]+$|^H(igh)?wa?y [0-9]+-[0-9]+$|^H(igh)?wa?y [0-9]+ *N(orth)?$|^H(igh)?wa?y [0-9]+ *S(outh)?$|^H(igh)?wa?y [0-9]+ *E(ast)?$|^H(igh)?wa?y [0-9]+ *W(est)?$/
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 100 100 100
+				MINWIDTH 2
+				MAXWIDTH 33
+				ANTIALIAS TRUE
+			END
+		END
+
+		METADATA
+			WMS_TITLE "Louisiana Major Roads"
+			WMS_ABSTRACT "Louisiana Major Roads represents interstate, U.S., and state highways and other major thoroughfares within Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: Hwys
+		NAME hwys
+		TYPE LINE
+		TILEINDEX "la_roads.shp"
+		TILEITEM "LOCATION"
+		STATUS DEFAULT
+		CLASSITEM 'FENAME'
+		SYMBOLSCALE 125000
+		MAXSCALE 150000
+		TRANSPARENCY ALPHA
+		CLASS
+			NAME 'US Hwys'
+			EXPRESSION /^U(nited )?S(tates)? H(igh)?wa?y [0-9]+$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ +\(Bus\)$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *N(orth)?$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *S(outh)?$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *E(ast)?$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *W(est)?$/
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 110 110 110
+				MINWIDTH 5
+				MAXWIDTH 35
+				ANTIALIAS TRUE
+			END
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 230 152 0
+				MINWIDTH 2
+				MAXWIDTH 33
+				ANTIALIAS TRUE
+			END
+		END
+		CLASS
+			NAME 'Hwys'
+			EXPRESSION /^H(igh)?wa?y *[0-9]+$|^H(igh)?wa?y [0-9]+-[0-9]+$|^H(igh)?wa?y [0-9]+ *N(orth)?$|^H(igh)?wa?y [0-9]+ *S(outh)?$|^H(igh)?wa?y [0-9]+ *E(ast)?$|^H(igh)?wa?y [0-9]+ *W(est)?$/
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 110 110 110
+				MINWIDTH 5
+				MAXWIDTH 35
+				ANTIALIAS TRUE
+			END
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 255 234 190
+				MINWIDTH 2
+				MAXWIDTH 33
+				ANTIALIAS TRUE
+			END
+		END
+
+		METADATA
+			WMS_TITLE "Louisiana Major Roads"
+			WMS_ABSTRACT "Louisiana Major Roads represents interstate, U.S., and state highways and other major thoroughfares within Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+		NAME interstates_outline
+		TYPE LINE
+		TILEINDEX "la_roads.shp"
+		TILEITEM "LOCATION"
+		STATUS DEFAULT
+		CLASSITEM 'FENAME'
+		SYMBOLSCALE 255000
+		MAXSCALE 150000
+		TRANSPARENCY ALPHA
+		CLASS
+			EXPRESSION /^I-[0-9]+$|^I-[0-9]+ *N(orth)?$|^I-[0-9]+ *S(outh)?$|^I-[0-9]+ *E(east)?$|^I-[0-9]+ *W(est)?$/
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 60 60 60
+				MINWIDTH 5
+				MAXWIDTH 43
+				ANTIALIAS TRUE
+			END
+		END
+		
+		METADATA
+			WMS_TITLE "Louisiana Major Roads"
+			WMS_ABSTRACT "Louisiana Major Roads represents interstate, U.S., and state highways and other major thoroughfares within Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: Interstates
+		NAME interstates
+		TYPE LINE
+		TILEINDEX "la_roads.shp"
+		TILEITEM "LOCATION"
+		STATUS DEFAULT
+		CLASSITEM 'FENAME'
+		SYMBOLSCALE 250000
+		MAXSCALE 150000
+		TRANSPARENCY ALPHA
+		CLASS
+			NAME 'Interstates'
+			EXPRESSION /^I-[0-9]+$|^I-[0-9]+ *N(orth)?$|^I-[0-9]+ *S(outh)?$|^I-[0-9]+ *E(east)?$|^I-[0-9]+ *W(est)?$/
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 60 60 60
+				MINWIDTH 7
+				MAXWIDTH 45
+				ANTIALIAS TRUE
+			END
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 168 0 0
+				MINWIDTH 5
+				MAXWIDTH 43
+				ANTIALIAS TRUE
+			END
+		END
+		
+		METADATA
+			WMS_TITLE "Louisiana Major Roads"
+			WMS_ABSTRACT "Louisiana Major Roads represents interstate, U.S., and state highways and other major thoroughfares within Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: Display Interstates
+		NAME d_interstates
+		TYPE LINE
+		DATA interstates
+		STATUS DEFAULT
+		CLASSITEM 'FENAME'
+		LABELITEM 'FENAME'
+		SYMBOLSCALE 250000
+		MINSCALE 150000
+		TRANSPARENCY ALPHA
+		CLASS
+			NAME 'Interstates'
+			EXPRESSION /^I-[0-9]+$|^I-[0-9]+ *N(orth)?$|^I-[0-9]+ *S(outh)?$|^I-[0-9]+ *E(east)?$|^I-[0-9]+ *W(est)?$/
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 60 60 60
+				WIDTH 5
+				MINWIDTH 2
+				MAXWIDTH 15
+				ANTIALIAS TRUE
+			END
+			STYLE
+				#SYMBOL 'circle'
+				COLOR 168 0 0
+				WIDTH 3
+				MINWIDTH 1
+				MAXWIDTH 13
+				ANTIALIAS TRUE
+			END
+		END
+
+		METADATA
+			WMS_TITLE "Louisiana Major Roads"
+			WMS_ABSTRACT "Louisiana Major Roads represents interstate, U.S., and state highways and other major thoroughfares within Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+	
+	LAYER
+	#CS NAME: Cities
+		NAME cities
+		TYPE POINT
+		DATA la_cities
+		STATUS DEFAULT
+  
+		CLASSITEM 'NAME'
+		CLASS
+			MAXSCALE 350000
+			NAME 'Cities'
+			EXPRESSION ([POP] < 90000)
+			STYLE
+				SYMBOL 'square'
+				SIZE 7
+				COLOR 0 255 0
+				OUTLINECOLOR 0 0 0
+			END
+		END	
+		METADATA
+			WMS_TITLE "U.S. National Atlas, Louisiana Cities"
+			WMS_ABSTRACT "U.S. National Atlas, Louisiana Cities represents cities and towns in the State of Louisiana."
+			WMS_SRS "EPSG:4326"
+		END
+	END
+		
+	#
+	#END NAMES
+	#cutoff point for layers we want to show in the list box
+	#
+	
+	LAYER
+		NAME water_anno
+		TYPE ANNOTATION
+		DATA la_waterply_anno
+		STATUS DEFAULT
+		REQUIRES "[water_polygons]"
+		CLASSITEM 'LANDNAME'
+		LABELITEM 'LANDNAME'
+		CLASS
+			MINSCALE 350000
+			EXPRESSION /[Ll]ake [Pp]ontchartrain/
+			LABEL
+				TYPE TRUETYPE
+				FONT courier-bold
+				SIZE 8
+				OUTLINECOLOR 255 255 255
+				COLOR 19 0 150
+				POSITION cc
+			END
+		END
+		CLASS
+			MAXSCALE 350000
+			EXPRESSION /./
+			LABEL
+				TYPE TRUETYPE
+				FONT courier-bold
+				SIZE 8
+				OUTLINECOLOR 255 255 255
+				COLOR 19 0 150
+				MINFEATURESIZE 40
+				POSITION cc
+			END
+		END
+	END
+	
+	LAYER
+		NAME streams_anno
+		TYPE ANNOTATION
+		TILEINDEX "la_rivers.shp"
+		TILEITEM "LOCATION"
+		STATUS DEFAULT
+		REQUIRES "[streams]"
+		LABELITEM 'FENAME'
+		CLASSITEM 'FENAME'
+		MAXSCALE 75000
+		CLASS
+			STYLE
+				SYMBOL 'diamond'
+				SIZE 6
+				COLOR 19 0 150
+				OUTLINECOLOR 255 255 255
+			END
+			LABEL
+				TYPE TRUETYPE
+				FONT courier-bold
+				SIZE 8
+				OUTLINECOLOR 255 255 255
+				COLOR 19 0 150
+				MINDISTANCE 300
+				POSITION auto
+				PARTIALS true
+			END
+		END	
+	END	
+	
+	LAYER
+		NAME railroads_anno
+		TYPE ANNOTATION
+		DATA la_railroads_anno
+		STATUS DEFAULT
+		REQUIRES "[rails]"
+		CLASSITEM 'FENAME'
+		LABELITEM 'FENAME'
+		TRANSPARENCY ALPHA
+		CLASS
+			MAXSCALE 37500
+			EXPRESSION /./
+			LABEL
+				ANGLE AUTO
+				TYPE TRUETYPE
+				FONT courier-bold
+				SIZE 8
+				OUTLINECOLOR 250 250 250
+				COLOR  0 0 0
+				#MINFEATURESIZE 40
+				POSITION cc
+				ANTIALIAS TRUE
+			END
+		END
+	END
+	
+	LAYER
+		NAME roads_anno
+		TYPE ANNOTATION
+		TILEINDEX "la_roads.shp"
+		TILEITEM "LOCATION"
+		STATUS DEFAULT
+		REQUIRES "[roads]"
+		LABELITEM 'FENAME'
+		CLASSITEM 'FENAME'
+		SYMBOLSCALE 10000
+		TRANSPARENCY ALPHA
+		CLASS
+			EXPRESSION /^[Ii]-/
+			MAXSCALE 18750
+			TEXT ''
+		END
+		CLASS
+			EXPRESSION /^U(nited )?S(tates)? H(igh)?wa?y/
+			MAXSCALE 18750
+			TEXT ''
+		END
+		CLASS
+			EXPRESSION /^H(igh)?wa?y/
+			MAXSCALE 18750
+			TEXT ''
+		END
+		CLASS
+			EXPRESSION /./
+			MAXSCALE 10000
+			LABEL
+				ANGLE AUTO
+				TYPE TRUETYPE
+				FONT verdana-bold
+				COLOR 0 0 0
+				OUTLINECOLOR 250 250 250
+				MINSIZE 6
+				MAXSIZE 8
+				MINDISTANCE 300
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+			END
+			TEXT ([FEDIRP][FEDIRS] [FENAME] [FETYPE])
+		END
+	END		
+	
+	LAYER
+		NAME interstates_anno
+		TYPE ANNOTATION
+		DATA interstates_anno
+		Status DEFAULT
+		REQUIRES "[d_interstates] OR [interstates]"
+		CLASSITEM 'FEFNAME'
+		LABELITEM 'FEFNAME'
+		TRANSPARENCY ALPHA
+		CLASS
+			EXPRESSION /^[Ii]-[0-9]{2}$/
+			STYLE
+				SYMBOL graphics/interstate.png
+				#SYMBOL ../graphics/interstate.png
+			END
+			LABEL
+				#TYPE TRUETYPE
+				#FONT arial-bold
+				SIZE TINY#6
+				COLOR 255 255 255
+				POSITION cc
+				PARTIALS TRUE
+			END
+			TEXT ([MIN_FENUM])
+		END
+		CLASS
+			EXPRESSION /^[Ii]-[0-9]{2} *N(orth)?$|^[Ii]-[0-9]{2} *S(outh)?$|^[Ii]-[0-9]{2} *E(ast)?$|^[Ii]-[0-9]{2} *W(est)?$/
+			STYLE
+				SYMBOL graphics/interstate_d.png
+				#SYMBOL ../graphics/interstate_d.png
+			END
+			LABEL
+				#TYPE TRUETYPE
+				#FONT arial-bold
+				SIZE TINY
+				COLOR 255 255 255
+				POSITION cc
+				PARTIALS TRUE
+				WRAP '|'
+			END
+			TEXT ([MIN_FEDIRP][MIN_FEDIRS]| |[MIN_FENUM])
+			#TEXT ([MIN_FENUM][MIN_FEDIRP][MIN_FEDIRS])
+		END
+		CLASS
+			EXPRESSION /^[Ii]-[0-9]{3}$/
+			MAXSCALE 700000
+			STYLE
+				SYMBOL graphics/interstate.png
+				#SYMBOL ../graphics/interstate.png
+			END
+			LABEL
+				#TYPE TRUETYPE
+				#FONT arial-bold
+				SIZE TINY
+				COLOR 255 255 255
+				POSITION cc
+				PARTIALS TRUE
+			END
+			TEXT ([MIN_FENUM])
+		END
+		CLASS
+			EXPRESSION /^[Ii]-[0-9]{3} *N(orth)?$|^[Ii]-[0-9]{3} *S(outh)?$|^[Ii]-[0-9]{3} *E(ast)?$|^[Ii]-[0-9]{3} *W(est)?$/
+			MAXSCALE 700000
+			STYLE
+				SYMBOL graphics/interstate_d.png
+				#SYMBOL ../graphics/interstate_d.png
+				SIZE 18
+			END
+			LABEL
+				#TYPE TRUETYPE
+				#FONT arial-bold
+				SIZE TINY
+				COLOR 255 255 255
+				POSITION cc
+				PARTIALS TRUE
+				WRAP '|'
+			END
+			TEXT ([MIN_FEDIRP][MIN_FEDIRS]| |[MIN_FENUM])
+			#TEXT ([MIN_FENUM][MIN_FEDIRP][MIN_FEDIRS])
+		END
+		CLASS
+			EXPRESSION /./
+			MAXSCALE 18750
+			LABEL
+				ANGLE AUTO
+				TYPE TRUETYPE
+				FONT verdana-bold
+				COLOR 0 0 0
+				OUTLINECOLOR 250 250 250
+				SIZE 6
+				#MINDISTANCE 200
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+			END
+		END
+	END
+	
+	LAYER
+		NAME hwys_anno
+		TYPE ANNOTATION
+		DATA hwys_anno
+		STATUS DEFAULT
+		REQUIRES "[hwys]"
+		CLASSITEM 'FEFNAME'
+		LABELITEM 'FEFNAME'
+		CLASS
+			EXPRESSION /^U(nited )?S(tates)? H(igh)?wa?y [0-9]+$/
+			MAXSCALE 37500
+			STYLE
+				SYMBOL graphics/ushwy.png
+				#SYMBOL ../graphics/ushwy.png
+			END
+			LABEL
+				SIZE TINY
+				COLOR 0 0 0
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+			END
+			TEXT ([MIN_FENUM])
+		END
+		CLASS
+			EXPRESSION /^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ +\(Bus\)$/
+			#MAXSCALE 37500
+			STYLE
+				SYMBOL graphics/ushwy_d.png
+				#SYMBOL ../graphics/ushwy_d.png
+			END
+			LABEL
+				SIZE TINY
+				COLOR 0 0 0
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+				WRAP '|'
+			END
+			TEXT (BUS| |[MIN_FENUM])
+		END
+		CLASS
+			EXPRESSION /^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *N(orth)?$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *S(outh)?$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *E(ast)?$|^U(nited )?S(tates)? H(igh)?wa?y [0-9]+ *W(est)?$/
+			MAXSCALE 37500
+			STYLE
+				SYMBOL graphics/ushwy_d.png
+				#SYMBOL ../graphics/ushwy_d.png
+			END
+			LABEL
+				SIZE TINY
+				COLOR 0 0 0
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+				WRAP '|'
+			END
+			TEXT ([MIN_FEDIRP][MIN_FEDIRS]| |[MIN_FENUM])
+		END
+		CLASS
+			EXPRESSION /^H(igh)?wa?y *[0-9]{1,3}$/
+			MAXSCALE 37500
+			STYLE
+				SYMBOL graphics/ctyhwy.png
+				#SYMBOL ../graphics/ctyhwy.png
+			END
+			LABEL
+				SIZE TINY
+				COLOR 0 0 0
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+			END
+			TEXT ([MIN_FENUM])
+		END
+		CLASS
+			EXPRESSION /^H(igh)?wa?y *[0-9]{4}$/
+			MAXSCALE 37500
+			STYLE
+				SYMBOL graphics/ctyhwy_big.png
+				#SYMBOL ../graphics/ctyhwy_big.png
+			END
+			LABEL
+				SIZE TINY
+				COLOR 0 0 0
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+			END
+			TEXT ([MIN_FENUM])
+		END
+		CLASS
+			EXPRESSION /^H(igh)?wa?y [0-9]+-[0-9]+$/
+			MAXSCALE 37500
+			STYLE
+				SYMBOL graphics/ctyhwy_big.png
+				#SYMBOL ../graphics/ctyhwy_big.png
+			END
+			LABEL
+				SIZE TINY
+				COLOR 0 0 0
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+			END
+			TEXT ([MIN_FENUM])
+		END
+		CLASS
+			EXPRESSION /^H(igh)?wa?y [0-9]{1,3} *N(orth)?$|^H(igh)?wa?y [0-9]{1,3} *S(outh)?$|^H(igh)?wa?y [0-9]{1,3} *E(ast)?$|^H(igh)?wa?y [0-9]{1,3} *W(est)?$/
+			MAXSCALE 37500
+			STYLE
+				SYMBOL graphics/ctyhwy_d.png
+				#SYMBOL ../graphics/ctyhwy_d.png
+			END
+			LABEL
+				SIZE TINY
+				COLOR 0 0 0
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+				WRAP '|'
+			END
+			TEXT ([MIN_FEDIRP][MIN_FEDIRS]| |[MIN_FENUM])
+		END
+		CLASS
+			EXPRESSION /^H(igh)?wa?y [0-9]{4} *N(orth)?$|^H(igh)?wa?y [0-9]{4} *S(outh)?$|^H(igh)?wa?y [0-9]{4} *E(ast)?$|^H(igh)?wa?y [0-9]{4} *W(est)?$/
+			MAXSCALE 37500
+			STYLE
+				SYMBOL graphics/ctyhwy_big_d.png
+				#SYMBOL ../graphics/ctyhwy_big_d.png
+			END
+			LABEL
+				SIZE TINY
+				COLOR 0 0 0
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+				WRAP '|'
+			END
+			TEXT ([MIN_FEDIRP][MIN_FEDIRS]| |[MIN_FENUM])
+		END
+		CLASS
+			EXPRESSION /./
+			MAXSCALE 18750
+			LABEL
+				ANGLE AUTO
+				TYPE TRUETYPE
+				FONT verdana-bold
+				COLOR 0 0 0
+				OUTLINECOLOR 250 250 250
+				SIZE 6
+				#MINDISTANCE 200
+				POSITION cc
+				PARTIALS TRUE
+				ANTIALIAS TRUE
+			END
+		END
+	END
+	
+	LAYER
+		NAME cities_anno
+		TYPE ANNOTATION
+		DATA la_cities
+		STATUS DEFAULT
+		LABELITEM 'NAME'
+		CLASS
+			MAXSCALE 350000 
+			EXPRESSION ([POP] <= 90000)
+			LABEL
+				TYPE TRUETYPE
+				FONT courier-bold
+				OUTLINECOLOR  0 0 0
+				COLOR 255 255 0
+				SIZE 8
+				POSITION auto
+				PARTIALS FALSE
+			END	
+		END
+		CLASS 
+			EXPRESSION ([POP] > 90000)
+			LABEL
+				TYPE TRUETYPE
+				FONT courier-bold
+				OUTLINECOLOR 0 0 0
+				COLOR 255 255 0
+				SIZE 8
+				POSITION cc
+				PARTIALS FALSE
+			END	
+		END
+	END
+	
+	#Start of result layer
+	LAYER
+		NAME results
+		TYPE POINT
+		STATUS OFF
+		##END TOP##
+		#Test features.
+		FEATURE
+			POINTS
+				-92.55 31.04
+			END
+			TEXT '001'
+		END
+		FEATURE
+			POINTS
+				-90 31.04
+			END
+			TEXT '002'
+		END
+		##BEGIN BOTTOM##
+		CLASS
+			LABEL
+				TYPE TRUETYPE
+				FONT verdana
+				OUTLINECOLOR 255 255 255
+				SIZE 7
+				COLOR 0 0 0
+				POSITION AUTO
+				PARTIALS FALSE
+			END
+			STYLE
+				SYMBOL graphics/point.gif
+				#SYMBOL ../graphics/point.gif
+			END
+		END
+  END
+  
+END #End of mapfile

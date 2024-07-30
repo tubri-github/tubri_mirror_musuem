@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.tubri.org/museum/webservices/bigfootws/Bigfoot.asmx?wsdl" docRef="http://www.tubri.org/museum/webservices/bigfootws/Bigfoot.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.tubri.org/museum/webservices/bigfootws/Bigfoot.asmx" xmlns:q1="http://www.tubri.org/museum/webservices" binding="q1:BigfootSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.tubri.org/museum/webservices/bigfootws/Bigfoot.asmx" xmlns:q2="http://www.tubri.org/museum/webservices" binding="q2:BigfootSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

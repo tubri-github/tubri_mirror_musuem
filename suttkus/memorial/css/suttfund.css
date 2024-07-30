@@ -1,0 +1,64 @@
+﻿body 
+{
+    font-family: Calibri;
+}
+
+.wrapper1
+{
+    border-style: solid; 
+    width: 90%; 
+    margin-left: 
+    auto; 
+    margin-right: auto;
+}
+.head_content
+{
+    width:85%; 
+    color:White; 
+    background-color: #0067ab; 
+    font-size: 40px; 
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+
+.navmenu1
+{
+    color:White; 
+    background-color: #0067ab; 
+    width:91%;
+    text-align: left;    
+}
+
+.navmenu1 ul
+{   
+    display: inline;
+    list-style-type: none;
+    padding-right: 15px;
+    padding-left: 0px;
+    margin:0px;
+}
+
+.navmenu1 li
+{   
+    display: inline;
+    list-style-type: none;
+    padding-right: 15px;
+    padding-left: 0px;
+    margin:0px;
+}
+
+.main_content
+{
+    width:85%; 
+    text-align: left;
+}
+
+.donate
+{
+    text-align:left; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 350px;
+}
+
+

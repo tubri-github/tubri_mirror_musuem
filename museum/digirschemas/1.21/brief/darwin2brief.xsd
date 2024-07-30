@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:digir="http://digir.net/schema/protocol/2003/1.0" xmlns:darwin="http://digir.net/schema/conceptual/darwin/2003/1.0" xmlns="http://www.tubri.org/museum/digirschemas/1.21/full/" targetNamespace="http://www.tubri.org/museum/digirschemas/1.21/full/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://digir.sourceforge.net/schema/protocol/2003/1.0/digir.xsd" namespace="http://digir.net/schema/protocol/2003/1.0" />
+  <xsd:import schemaLocation="http://www.tubri.org/museum/digirschemas/1.21/darwin2.xsd" namespace="http://digir.net/schema/conceptual/darwin/2003/1.0" />
+  <xsd:element name="record">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="darwin:DateLastModified" />
+		<xsd:element ref="darwin:InstitutionCode" />
+		<xsd:element ref="darwin:CollectionCode" />
+		<xsd:element ref="darwin:CatalogNumberText" />
+		<xsd:element ref="darwin:ScientificName" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="disco"
+    targetNamespace="http://www.tubri.org/museum"
+    elementFormDefault="qualified"
+    xmlns="http://www.tubri.org/museum"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:annotation>
+    <xs:documentation>
+      $Id: disco.xsd, v 1.0, 12/02/2010 01:06:36 PM, DJ $
+    </xs:documentation>
+    <xs:documentation>
+      XML Schema describing the discovery file used to define a raw XML resource.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:element name="resources">
+    <xs:annotation>
+      <xs:documentation>
+        Wrapper for a group of resources.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="resource" minOccurs="1" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              An individual resource.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"></xs:element>
+              <xs:element name="code" type="xs:string"></xs:element>
+              <xs:element name="file" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>
+                    A Darwin Core V2 formatted XML file containing all or part of the records in this resource.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:attribute name="fileName" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

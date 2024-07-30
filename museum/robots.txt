@@ -1,0 +1,13 @@
+# robots.txt for http://www.musuem.tulane.edu/
+User-agent: *
+Disallow: /cgi-bin
+Disallow: /admin
+Disallow: /images
+Disallow: /log
+Disallow: /asih
+Disallow: /hank
+Disallow: /hank/Transforming+New+Orleans.pdf
+Disallow: /ictiobin
+Disallow: /InvertCat.zip
+Disallow: /geoworld/data
+Disallow: /geoworld/proprietary+data

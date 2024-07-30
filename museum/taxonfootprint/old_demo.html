@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Bigfoot</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+    <style type="text/css">
+        span, label {font-size: 9pt;}
+        .deco {background-color: #DAE6DA; padding: 1px;}
+        .deco input {font-size: 9pt; height: 15px;}
+        .radio {position: relative; top: 2px;}
+    </style>
+    <script type="text/javascript">
+        var $speciesNames = new Array();
+        var $outFormat, $lat, $lon;
+        var $maxSpecs = 20;
+        var winObj;
+        var dotterTimeout;
+        
+        //Display message with animated dots
+        function dotter(msgObjId, msgObjWin, msg, currentDots, maxDots) {
+            var dots = '';
+            winObj = (msgObjWin == null) ? winObj : msgObjWin;
+            for (var i = 0; i < currentDots; i++)
+                dots += '.';
+
+            for (var i = 0; i < (maxDots - currentDots); i++)
+                dots += '&nbsp;';
+            if (/\.{3}/.test(dots)) {
+                currentDots = -1;
+            }
+
+            try {
+                winObj.document.getElementById(msgObjId).innerHTML = msg + dots;
+                dotterTimeout = setTimeout("dotter('" + msgObjId + "' ,null , '" + msg + "', " + (currentDots + 1) + ", " + maxDots + ")", 200);
+            }
+
+            catch (e) {
+                clearTimeout(dotterTimeout);
+            }
+        }
+
+        //Validate form before processing.
+        function run()
+        {
+            $("#secretWindow").fadeOut('slow');
+            var $msg = '';
+            
+            if ($speciesNames.length == 0)
+            {
+                $msg += 'No species names provided.\n\n';
+            }
+            
+            var $latMsg = validateCoordinates(true);
+            var $lonMsg = validateCoordinates(false);
+            
+            switch ($latMsg)
+            {
+                case "empty":
+                    $msg += 'No latitude provided.\n\n';
+                break;
+                
+                case "non-numeric":
+                    $msg += 'Latitude is not a decimal value.\n\n';
+                break;
+                
+                case "out-of-bounds":
+                    $msg += 'Latitude must be >= -90 and <= 90.\n\n'
+                break;
+                
+                default:
+                    $lat = $("#latText").attr('value');
+                break;
+            }
+            
+            switch ($lonMsg)
+            {
+                case "empty":
+                    $msg += 'No longitude provided.\n\n';
+                break;
+                
+                case "non-numeric":
+                    $msg += 'Longitude is not a decimal value.\n\n';
+                break;
+                
+                case "out-of-bounds":
+                    $msg += 'Latitude must be >= -180 and <= 180.\n\n'
+                break;
+                
+                default:
+                    $lon = $("#lonText").attr('value');
+                break;
+            }
+            
+            if ($msg.length > 0)
+            {
+                alert($msg.substring(0, $msg.length - 2));
+            }
+            
+            else
+            {
+                //Build url.
+                var $url = 'http://www.tubri.org/museum/taxonfootprint/tfp.aspx'
+                var $qString = 'species=' + $speciesNames.join('|') + '&format=' + $outFormat + '&lat=' + $lat +
+                    '&lon=' + $lon;
+
+                clearTimeout(dotterTimeout);
+                $("#progress").show();
+                dotter('dotSpan', window, 'Processing, please wait', 0, 3);
+                
+                if ($outFormat == 'raw')
+                {
+                    //var $src = "javascript:window.open('" + $url + '?' + $qString + "', 'Results', 'width=800px, height=500px, scrollbars=1, resizable=1')";
+                    //$("#secretWindow").attr('src', $src);
+                    $("#secretWindow").attr('src', $url + '?' + $qString);
+                }
+                    
+                else
+                    $.download($url, $qString, 'get', function(){
+                        $('#progress').fadeOut('slow', function(){
+                            $('#dotSpan').attr('innerHTML', '');
+                        });
+                    });                    
+            }
+        }
+            
+/*******************************************Utility functions********************************************************/
+        //Download helper. allows us to download a file through JQuery so we control download "event".
+        $.download = function(url, data, method, callback){
+            var inputs = '';
+            var iframeX;
+            var downloadInterval;
+            if(url && data) {
+                // remove old iframe if it exists.
+                if($("#iframeX")) $("#iframeX").remove();
+                // create new iframe.
+                iframeX = $('<iframe src="javascript: false;" name="iframeX" id="iframeX" frameborder="0" style="display: none"></iframe>').appendTo('body').hide();
+                if($.browser.msie){
+                    downloadInterval = setInterval(function(){
+                        // if loading then readyState is "loading" else readyState is "interactive".
+                        if(iframeX&& iframeX[0].readyState !== "loading"){
+                            callback();
+                            clearInterval(downloadInterval);
+                        }
+                    }, 100);
+                } 
+                
+                else {
+                    iframeX.load(function(){
+                        callback();
+                    });
+                }
+
+                //split params into form inputs.
+                $.each(data.split('&'), function(){
+                    var pair = this.split('=');
+                    var p = pair[0];
+                    var val = pair[1];
+                    inputs += '<input type="hidden" name="'+ p +'" value="'+ val + '" />';
+                });
+
+                //create form to send request
+                $('<form action="'+ url +'" method="'+ (method||'post') + '" target="iframeX">' + inputs + '</form>').appendTo('body').submit().remove();
+            }
+        }
+
+        
+        //Check for fields containing white spaces only.
+        //Equivalent to empty fields. Returns false if the field is empty. 
+        function isNotEmptyField(str)
+        {
+            for (var i=0; i<str.length; i++)
+            {
+	            if (str.substring(i, i+1) != ' ')
+		            return true;
+            }
+
+            return false;
+        }
+        
+        //Validates latitude and longitude fields.
+        function validateCoordinates($isLat)
+        {
+            var $max = (($isLat)? 90 : 180), $min = (($isLat)? -90 : -180);
+            
+            var $num = ($isLat)? $("#latText").attr('value') : $("#lonText").attr('value');
+
+            if (!isNotEmptyField($num))
+            {
+	            return "empty";
+            }
+
+            if (!isNumeric($num, false))
+            {
+	            return "non-numeric";
+            }
+            
+            if (($num < $min) || ($num > $max))
+            {
+                return "out-of-bounds";
+            }
+
+            return "valid";
+        }
+
+        //Validates numeric
+        function isNumeric(value, unsigned)
+        {
+            var anum;
+
+            if (!unsigned)
+	            anum=/(^-?\d+$)|(^-?\d*\.\d+$)|(^\+?\d+$)|(^\+?\d*\.\d+$)/;
+            else
+	            anum=/(^\d+$)|(^\d*\.\d+$)/;
+            if (anum.test(value))
+                return true;
+            return false;
+        }
+
+/*******************************************End utility functions********************************************************/
+
+        $(document).ready(function() {
+            //Initialize the output format with the default value.
+            $("[name='format']").each(function() {
+                if ($(this).attr('checked')) {
+                    $outFormat = $(this).attr('value');
+                    return false;
+                }
+            });
+
+            //Add the species name to the species div onclick.
+            $("#addSpeciesBtn").click(function() {
+                var $newSpec = $("#speciesText").attr('value');
+                if (!isNotEmptyField($newSpec)) {
+                    alert('Please enter a species Name.');
+                    $("#speciesText").attr('value', '');
+                }
+                else {
+                    $newSpec = $.trim($newSpec);
+                    //Make sure we don't exceed the max number of species names.
+                    if ($speciesNames.length < $maxSpecs) {
+                        $speciesNames.push($newSpec);
+                        $("#speciesText").attr('value', '');
+                        $("#speciesDiv").attr('innerHTML', $speciesNames.join('<br />'));
+                        $("#speciesText").focus();
+                    }
+
+                    else {
+                        alert('The maximum number of species name (' + $maxSpecs + ') has been reached');
+                    }
+                }
+
+                return false;
+            });
+
+            //Check the ouput format oncheck.
+            $("[name='format']").click(function() {
+                $outFormat = $(this).attr('value');
+            });
+
+            //Clear the form.
+            $("#clearBtn").click(function() {
+                $("[name='format']").each(function() {
+                    $(this).attr('checked', $(this).attr('defaultChecked'));
+                    if ($(this).attr('checked'))
+                        $outFormat = $(this).attr('value');
+                });
+
+                $lon = '';
+                $lat = '';
+                $speciesNames = new Array();
+
+                $("#speciesText").attr('value', '');
+                $("#speciesDiv").attr('innerHTML', '');
+                $("#lonText").attr('value', '');
+                $("#latText").attr('value', '');
+                
+                $("#secretWindow").fadeOut('slow');
+                $("#secretWindow").attr('src', '');
+            });
+            
+            //Do Iframe stuff.
+            $("#secretWindow").load(function() {
+                $('#progress').fadeOut('slow', function(){
+                    $('#dotSpan').attr('innerHTML', '');
+                    if (($outFormat == 'raw') && ($("#secretWindow").attr('src') != window.location) && 
+                    ($("#secretWindow").attr('src').length > 0))
+                    {
+                        $("#secretWindow").attr('width', '80%');
+                        $("#secretWindow").attr('height', '500px');
+                        $("#secretWindow").attr('scrolling', 'auto');
+                        $("#secretWindow").fadeIn('slow');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif; font-size: 11pt">
+    <form id="form1" runat="server">
+        
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="position: relative; top: 100px">
+            <tr>
+                <td valign="middle" align="center">
+                        <p>
+                            Bigfoot: Taxonomic Footprint Verification of Georeferenced Localities.
+                        </p>
+                    <div style="text-align: left; padding: 5px; background-color: #FFFFE8; border: 1px solid #A6A64B; position: relative; margin-right: auto; margin-left: auto; width: 540px; height: 305px">
+                        <input type="text" maxlength="255" style="width: 390px" id="speciesText" />&nbsp;&nbsp;&nbsp;
+                        <input type="submit" id="addSpeciesBtn" value="Add Species" style="position: relative; left: 24px; width: 100px"/><br /><br />
+                        <div id="speciesDiv" style="overflow: auto; width: 533px; height:200px; border: solid 1px #A2A4B0; background-color: White"></div>
+                        <table width="100%" border="0" cellpadding="2" cellspacing="0" style="position: relative; top: 5px">
+                            <tr>
+                                <td style="width: 44%">
+                                    <div class="deco" style="position: relative; margin-left: -2px">
+                                        <span>Output format: </span>
+                                        <input type="radio" class="radio" name="format" id="kmlRadio" value="kml" checked="checked" /><label for="kmlRadio">kml</label>&nbsp;&nbsp;
+                                        <input type="radio" class="radio" name="format" id="rawRadio" value="raw" /><label for="rawRadio">raw</label>
+                                    </div>
+                                </td>
+                                <td style="width: 56%">
+                                    <div class="deco">
+                                        <span>Coordinates:&nbsp;</span>
+                                        <label for="latText">lat</label>
+                                        <input type="text" id="latText" size="7" maxlength="15" />&nbsp;&nbsp;&nbsp;
+                                        <label for="lonText">lon</label>
+                                        <input type="text" id="lonText" size="7" maxlength="15" />
+                                    </div> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="button" id="runBtn" onclick="run()" value="Run" style="position: relative; margin-left: -3px; float: left"/>
+                                    <input type="button" id="clearBtn" value="Clear" style="float: left; position: relative; left: 10px" />
+                                    <div id="progress" style="position: relative; left: 20px">
+                                        <span id="dotSpan" style="font-weight: bold; position: relative; top: 6px"></span><br />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table><br />
+        <div style="text-align: center; width: 100%; position: relative; top: 100px">
+            <iframe id="secretWindow" width="0" height="0" style="display: none">
+                <p>Your browser does not support iframes. Please upgrade to the latest version.</p>
+            </iframe>
+        </div>
+    </form>
+</body>
+</html>

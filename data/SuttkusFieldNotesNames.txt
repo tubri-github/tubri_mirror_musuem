@@ -1,0 +1,803 @@
+NumberofOccurrences	CollectorName	LastNameGuess
+7	V.C. Colbert (Trau)	Trau
+5	M. Abbey	Abbey
+4	M.A. Abbey	Abbey
+3	M.A.Abbey	Abbey
+16	D. Adkison	Adkison
+5	C.Alegro	Alegro
+1	Algero	Algero
+3	C. Algero	Algero
+1	C.Algero	Algero
+17	Anderson	Anderson
+1	M. Anderson	Anderson
+63	P.K. Anderson	Anderson
+1	R.Anderson	Anderson
+10	Andersson	Andersson
+51	M. Andersson	Andersson
+1	M.Andersson	Andersson
+1	Ansel	Ansel
+1	A.A. Arata	Arata
+2	Archer	Archer
+1	Atkinson	Atkinson
+1	T.P. Atkinson	Atkinson
+2	Backus	Backus
+7	Baker	Baker
+52	Barbour	Barbour
+6	C.Barbour	Barbour
+43	C.D. Barbour	Barbour
+1	CD Barbour	Barbour
+2	Barclay	Barclay
+4	M. Barclay	Barclay
+1	Bardon	Bardon
+45	Barkuloo	Barkuloo
+18	J. Barkuloo	Barkuloo
+2	J.Barkuloo	Barkuloo
+38	J.M. Barkuloo	Barkuloo
+1	R. Barrett	Barrett
+3	Barry	Barry
+15	Bart	Bart
+20	H. Bart Jr.	Bart
+1	H.L. Bart	Bart
+1	H.L. Bart Jr.	Bart
+1	Bartizal	Bartizal
+1	J.F. Bartizal Jr.	Bartizal
+1	Bechler	Bechler
+7	D. Bechler	Bechler
+41	Beckham	Beckham
+6	E.C. Beckham	Beckham
+30	Berra	Berra
+6	F.H. Berry	Berry
+3	Bertoniere	Bertoniere
+1	Bigger	Bigger
+1	J. Bigger	Bigger
+6	J.Bigger	Bigger
+10	Biggs	Biggs
+12	Environmental Biology	Biology
+6	A. Black	Black
+8	A.Black	Black
+19	Black	Black
+14	Blackwell	Blackwell
+1	M. Blackwell	Blackwell
+49	M.M. Blackwell	Blackwell
+1	Blanchard	Blanchard
+5	Blank	Blank
+1	S. Bledsoe	Bledsoe
+2	S. Bogos	Bogos
+1	Bohlke	Bohlke
+3	D. Bohmhauer	Bohmhauer
+2	Bortone	Bortone
+1	Boschung	Boschung
+3	Boswell	Boswell
+2	B. Boultinghouse	Boultinghouse
+2	Boultinghouse	Boultinghouse
+1	Boy Scout Troop #22	Boy Scouts
+1	Boy Scout Troop #22.	Boy Scouts
+1	Boy Scouts of America	Boy Scouts
+4	Boyer	Boyer
+24	M.L. Brady	Brady
+1	P.  Brady	Brady
+9	P. Brady	Brady
+1	P.Brady	Brady
+6	Peggy Brady	Brady
+34	Branch	Branch
+5	L. Branch	Branch
+1	Lyn Branch	Branch
+1	B. Branson	Branson
+1	Branson	Branson
+22	W.M. Brenneman	Brenneman
+4	Bresnic	Bresnic
+32	Bresnick	Bresnick
+2	G. Bresnick	Bresnick
+34	G.I. Bresnick	Bresnick
+16	Brockman	Brockman
+23	Brown	Brown
+10	S. Brown	Brown
+58	Bubrig	Bubrig
+1	T. Buchanan	Buchanan
+1	J.P. Buckley	Buckley
+10	H.S. Bui	Bui
+8	Burdon	Burdon
+3	P. Burdon	Burdon
+1	Burkhead	Burkhead
+2	N. Burkhead	Burkhead
+11	E.M. Burks	Burks
+1	Burris	Burris
+1	P. Burris	Burris
+1	K.Byrd	Byrd
+1	E.B.C.	C
+3	Cagle	Cagle
+1	F.R. Cagle	Cagle
+15	Cain	Cain
+2	T. Cain	Cain
+3	C. Carson	Carson
+1	Carter	Carter
+162	Caruso	Caruso
+8	J. Caruso	Caruso
+5	J. H. Caruso	Caruso
+5	J.Caruso	Caruso
+632	J.H. Caruso	Caruso
+1	John Caruso	Caruso
+271	Cashner	Cashner
+1	R. Cashner	Cashner
+14	R.C. Cashner	Cashner
+2	R.C.Cashner	Cashner
+5	R.Cashner	Cashner
+1	Casnher	Casnher
+2	Castro	Castro
+3	Caswell	Caswell
+1	P.P. Caswell	Caswell
+2	A. Chaney	Chaney
+1	Chaney	Chaney
+1	Chasner	Chasner
+2	Cheek	Cheek
+5	Chi	Chi
+1	E. Chi	Chi
+18	Chipman	Chipman
+1	R. Chipman	Chipman
+2	R.Chipman	Chipman
+11	R.K. Chipman	Chipman
+1	R.K.Chipman	Chipman
+14	E. Christopher	Christopher
+3	Clark	Clark
+1	1966 Environmental Biology Class	Class Group
+1	Baylor University students	Class Group
+1	Bio of fishes class	Class Group
+12	Biol. of Fishes	Class Group
+34	Biol. of Fishes Class	Class Group
+2	Biol.Class	Class Group
+86	Biology of Fishes Class	Class Group
+2	Class	Class Group
+6	Ecology Class	Class Group
+2	Enivron. Bio. Class	Class Group
+1	Env. Biol. Class	Class Group
+1	Envir. Bio. Class	Class Group
+1	Envir. Biol. Class	Class Group
+3	Environ. Bio. Class	Class Group
+2	Environmental Bio. Class	Class Group
+66	Environmental Biol. Class	Class Group
+104	Environmental Biology Class	Class Group
+1	Environmental Class	Class Group
+1	Environmental Class Group A	Class Group
+1	Environmrntal Biology Class	Class Group
+3	Field Zoo.	Class Group
+4	Field Zoo. Class	Class Group
+4	Field Zool.	Class Group
+10	Field Zool. Class	Class Group
+2	Field Zoology Class	Class Group
+1	Ich. Class	Class Group
+4	Ichth. Class	Class Group
+6	Ichthy. 370	Class Group
+38	Ichthy. Class	Class Group
+1	Ichthy. Class '49.	Class Group
+36	Ichthyology Class	Class Group
+1	Ichthyology Class 370	Class Group
+1	Mammology Class	Class Group
+1	Marine Biology Class	Class Group
+1	Party (AR Tech. students)	Class Group
+1	Students	Class Group
+1	Vert. Nat. Class	Class Group
+18	Vert. Nat. Hist. Class	Class Group
+1	Zoo. Class	Class Group
+3	Zoog. Class	Class Group
+26	Zoogeography Class	Class Group
+1	Clay	Clay
+1	J. Clay	Clay
+1	G. Clemmensen	Clemmensen
+381	Clemmer	Clemmer
+3	G. Clemmer	Clemmer
+62	G.H. Clemmer	Clemmer
+2	S. Clemmer	Clemmer
+23	V. Colbert	Colbert
+1	V.C. Colbert	Colbert
+3	V.T. Colbert	Colbert
+1	C. Cole	Cole
+1	C.F. Cole	Cole
+2	Cole	Cole
+1	Coley	Coley
+6	B. Collette	Collette
+7	B.B. Collette	Collette
+5	Collette	Collette
+2	D. Coniglio	Coniglio
+166	Conner	Conner
+40	J.V. Conner	Conner
+24	Contreras	Contreras
+1	Conway	Conway
+16	Crandall	Crandall
+3	Creaser	Creaser
+24	Dahlberg	Dahlberg
+1	M. Dahlberg	Dahlberg
+19	M.D. Dahlberg	Dahlberg
+1	R.C. Danneman	Danneman
+25	C.H. Dannemann	Dannemann
+1	C.H. Dannemann Jr.	Dannemann
+1	J. Dannemann	Dannemann
+1	R. Dannemann	Dannemann
+17	Darnell	Darnell
+14	J. Darnell	Darnell
+17	J.H. Darnell	Darnell
+5	R. Darnell	Darnell
+6	Davenport	Davenport
+2	S. Davis	Davis
+1	W. Davis	Davis
+26	DeAbate	DeAbate
+8	J. DeAbate	DeAbate
+6	J.DeAbate	DeAbate
+5	J.L. DeAbate	DeAbate
+10	C. Deacon	Deacon
+23	Deacon	Deacon
+3	J. Deacon	Deacon
+3	Deinlein	Deinlein
+3	M. Deinlein	Deinlein
+3	M.Deinlein	Deinlein
+1	Dendy	Dendy
+3	J.S. Dendy	Dendy
+8	P. Denette	Denette
+1	E. Deubler	Deubler
+1	E.L. Dietrich	Dietrich
+14	P. Dinette	Dinette
+2	P.Dinette	Dinette
+2	Donahue	Donahue
+5	Donley	Donley
+2	L. Donley	Donley
+1	B. Doulon	Doulon
+1	Dowell	Dowell
+1	H. Dowling	Dowling
+3	E. Drivas	Drivas
+1	D. Dunlap	Dunlap
+13	L.S. Dunn	Dunn
+2	C. Dupuy	Dupuy
+1	D. Earle	Earle
+2	S. Earle	Earle
+8	S.A. Earle	Earle
+2	Eaton	Eaton
+14	A. Echelle	Echelle
+6	Eddy	Eddy
+1	R. Eddy Jr.	Eddy
+1	S. Eddy	Eddy
+1	J. Eisenberg	Eisenberg
+4	H. Ellis	Ellis
+2	H.A. Ellis	Ellis
+1	H.Ellis	Ellis
+18	Esher	Esher
+196	et al.	et al.
+2	D. Etnier	Etnier
+1	D.A. Etnier	Etnier
+3	Etnier	Etnier
+2	H.E. Evans	Evans
+12	Faletto	Faletto
+1	Farver	Farver
+1	O. Farver	Farver
+1	Fehlman	Fehlman
+1	Fehlmann	Fehlmann
+2	Felley	Felley
+1	Ferraro	Ferraro
+3	B. Feuer	Feuer
+1	B.Feuer	Feuer
+3	Feuer	Feuer
+1	R. Feuer	Feuer
+1	R. Fever	Fever
+1	Findley	Findley
+11	Fisher	Fisher
+1	Commercial fishermen	fishermen
+1	Fishermen	Fishermen
+1	Fitz	Fitz
+2	R. Fitz	Fitz
+2	R.Fitz	Fitz
+1	Fitzjarell	Fitzjarell
+1	Fitzjarrell	Fitzjarrell
+6	Fogarty	Fogarty
+2	Forman	Forman
+1	J. Forth	Forth
+3	Forver	Forver
+1	E. Found	Found
+1	M. Franco	Franco
+12	B. Freeman	Freeman
+2	M. Freeman	Freeman
+1	M. French	French
+1	T. Fritts	Fritts
+1	Tom Fritts	Fritts
+1	S. Fritz	Fritz
+1	J. Furth	Furth
+1	Fuss	Fuss
+1	J. Gaddy	Gaddy
+1	Gail	Gail
+3	Galle	Galle
+2	E.Garcia	Garcia
+1	Gastony	Gastony
+3	J. Gates	Gates
+1	Gayle	Gayle
+2	S. Gayle	Gayle
+2	L. Giangrosso	Giangrosso
+1	C. Gibbs	Gibbs
+7	Gibbs	Gibbs
+2	R.H. Gibbs	Gibbs
+1	R.H. Gibbs Jr.	Gibbs
+1	RA Gibbs	Gibbs
+1	Gil	Gil
+1	C. Gilbert	Gilbert
+3	R.Gilbert	Gilbert
+1	S. Gilford	Gilford
+3	J. Gill	Gill
+4	C.G. Gillette	Gillette
+2	Gillette	Gillette
+1	Glenn	Glenn
+8	Gonor	Gonor
+1	Gonzalez	Gonzalez
+5	R. Gonzalez	Gonzalez
+25	Goodfellow	Goodfellow
+6	K. Goodfellow	Goodfellow
+352	K.G. Goodfellow	Goodfellow
+7	K.Goodfellow	Goodfellow
+1	Keith G. Goodfellow	Goodfellow
+1	R. Gordon	Gordon
+2	E. Gould	Gould
+5	Gould	Gould
+10	Grady	Grady
+14	J. Grady	Grady
+2	B. Grover	Grover
+9	E. Grover	Grover
+2	E.Grover	Grover
+14	Grover	Grover
+4	G. Gunning	Gunning
+4	G.E Gunning	Gunning
+828	G.E. Gunning	Gunning
+1	GE Gunning	Gunning
+327	Gunning	Gunning
+3	N. Guttmann	Guttmann
+3	Hall	Hall
+1	J. Hall	Hall
+1	W. Ham	Ham
+1	C.D Hancock	Hancock
+44	C.D. Hancock	Hancock
+24	Hancock	Hancock
+6	J.A. Hanley	Hanley
+1	Harman	Harman
+1	harper	harper
+2	Harry	Harry
+3	B. Harvey	Harvey
+4	D. Harvey	Harvey
+1	Harvey	Harvey
+2	S. Harvey	Harvey
+2	O.Haslbaner	Haslbaner
+15	Heath	Heath
+3	A.Heidt	Heidt
+2	D. Heins	Heins
+1	D.C Heins	Heins
+55	D.C. Heins	Heins
+2	G. Heins	Heins
+56	Heins	Heins
+3	Heitzman	Heitzman
+55	S. Herbert	Herbert
+1	Steve Herbert	Herbert
+2	C.M. Hermann	Hermann
+2	Hester	Hester
+1	J. Caruso  P.T. Hickman	Hickman
+1	Hildebrand	Hildebrand
+1	Hines	Hines
+1	Hoese	Hoese
+6	W. Hoffman	Hoffman
+2	Holdaway	Holdaway
+2	J. Holland	Holland
+11	Hollander	Hollander
+10	Holzenthal	Holzenthal
+5	J.J. Hoover	Hoover
+2	M. Hopkins Jr.	Hopkins
+2	Howell	Howell
+1	Hudson	Hudson
+2	Hughes	Hughes
+1	Hughs	Hughs
+40	Humphries	Humphries
+7	L.S. Iliff	Iliff
+2	Illick	Illick
+10	Irwin	Irwin
+1	E. Jackson	Jackson
+1	I. Jackson	Jackson
+1	F. Jannett	Jannett
+1	Jenkins	Jenkins
+17	Jimenez	Jimenez
+1	S. Jimenez	Jimenez
+29	Jimenez-C.	Jimenez-C
+16	S. Jimenez-C.	Jimenez-C
+4	S.Jimenez-C.	Jimenez-C
+1	Jimenez-Canossa	Jimenez-Canossa
+1	S. Jimenez-Canossa	Jimenez-Canossa
+1	B. Johnson	Johnson
+16	Johnson	Johnson
+34	C. Jones	Jones
+8	C.J. Jones	Jones
+3	C.Jones	Jones
+57	Jones	Jones
+1	R.P. Jones	Jones
+8	Jordan	Jordan
+1	E. Joseph	Joseph
+22	E.B. Joseph	Joseph
+26	Joseph	Joseph
+1	A. Kendall	Kendall
+1	Kezer	Kezer
+1	L.J. Kezer	Kezer
+1	L. Knapp	Knapp
+2	B. Kohl	Kohl
+18	G. Kohl	Kohl
+7	Kohl	Kohl
+1	Kopecky	Kopecky
+1	S. Kopecky	Kopecky
+1	Kornicker	Kornicker
+6	G. Kotsis	Kotsis
+1	A. Koval	Koval
+2	Krementz	Krementz
+4	E. Kruger	Kruger
+6	A. Kuris	Kuris
+10	Kuris	Kuris
+1	W. Landrum	Landrum
+20	D. Landwehr	Landwehr
+7	Landwehr	Landwehr
+1	J. Lange	Lange
+2	H.Large	Large
+2	S.Larson	Larson
+2	A.L. Laska	Laska
+23	Laska	Laska
+4	Lemke	Lemke
+9	Lesley	Lesley
+10	Levine	Levine
+2	Limbaugh	Limbaugh
+2	H. Loesch	Loesch
+2	S. Loesch	Loesch
+11	L. Loetterle	Loetterle
+11	Loetterle	Loetterle
+1	Loyacana	Loyacana
+33	Loyacano	Loyacano
+1	Lubritz	Lubritz
+2	R.R. Lubritz	Lubritz
+2	F.I. Luse	Luse
+6	Mannin	Mannin
+9	R. Manning	Manning
+1	Maron	Maron
+2	Marsh	Marsh
+7	Martin	Martin
+26	Marynick	Marynick
+3	Mason	Mason
+3	W. Mason	Mason
+38	W.T. Mason	Mason
+3	M. Mathew	Mathew
+15	M.M. May	May
+1	Mayer	Mayer
+7	McCarthy	McCarthy
+2	T. McCarthy	McCarthy
+4	F.H. McCormick	McCormick
+1	McCoy	McCoy
+2	B. McCullogh	McCullogh
+3	McInnis	McInnis
+11	McKee	McKee
+1	Meier	Meier
+52	R. Meier	Meier
+6	R.Meier	Meier
+1	SWAN members	members
+1	C.P. Menzies	Menzies
+6	P. Menzies	Menzies
+1	Mertz	Mertz
+6	M.F. Mettee	Mettee
+6	Mettee	Mettee
+2	F.Meyers	Meyers
+5	H.V. Miller	Miller
+29	Miller	Miller
+2	R. Miller	Miller
+26	R.J. Miller	Miller
+4	R.Miller	Miller
+1	C. Minkcley	Minkcley
+2	P. Monreal	Monreal
+1	P. Moon	Moon
+1	G.A. Moore	Moore
+2	Moore	Moore
+1	D. Morrow	Morrow
+1	M. Morrow	Morrow
+24	Moss	Moss
+6	P. Moss	Moss
+1	L. Mount	Mount
+11	Mount	Mount
+3	N. Negus	Negus
+13	N.C. Negus	Negus
+1	N.Negus	Negus
+5	Negus	Negus
+4	P. Negus	Negus
+1	Peter Negus	Negus
+3	Nelson	Nelson
+2	I.Nevares	Nevares
+2	D. Nieland	Nieland
+1	K. Nielsen	Nielsen
+1	K.T. Nielsen	Nielsen
+2	Nielsen	Nielsen
+1	K. Nielson	Nielson
+3	Nielson	Nielson
+2	J. Nipper	Nipper
+1	Nipper	Nipper
+8	D. Norriss	Norriss
+4	D.Norriss	Norriss
+239	NULL	NULL
+1	O'Brien	O'Brien
+4	P. O'Brien	O'Brien
+11	J. Odenkirk	Odenkirk
+7	Odom	Odom
+2	R.A. Odom	Odom
+1	L. Ogren	Ogren
+1	Ogren	Ogren
+1	J. Olliffe	Olliffe
+2	O'Neil	O'Neil
+2	P. O'Neil	O'Neil
+3	Onstad	Onstad
+2	R. Onstad	Onstad
+3	Osborn	Osborn
+8	S.Osborn	Osborn
+45	Pagels	Pagels
+3	Palmer	Palmer
+2	C.E. Parker	Parker
+2	Party	Party
+2	R. Paschall	Paschall
+8	R.A. Paschall	Paschall
+31	R.L. Paschall	Paschall
+1	S. Passel	Passel
+1	M. Patureau	Patureau
+1	G.Pearl	Pearl
+5	E.B. Peebles	Peebles
+1	E.Peebles	Peebles
+9	Peebles	Peebles
+11	G.H. Penn	Penn
+24	Peterson	Peterson
+2	R.B. Peterson	Peterson
+1	R.D. Peterson	Peterson
+1	B. Pfleeger	Pfleeger
+2	B.Pfleeger	Pfleeger
+1	Pierce	Pierce
+1	J.M. Pierson	Pierson
+15	M. Pierson	Pierson
+3	Pierson	Pierson
+7	J. Pike	Pike
+2	S. Pollock	Pollock
+1	Pomales	Pomales
+7	B.A. Porter	Porter
+2	BA Porter	Porter
+1	Porter	Porter
+1	B.A. Potts	Potts
+1	Poulson	Poulson
+2	T. Poulson	Poulson
+1	C. Prehmus	Prehmus
+1	C.A. Prehmus	Prehmus
+7	Prehmus	Prehmus
+5	J.Price	Price
+3	Price	Price
+1	Pugh	Pugh
+4	Quinn	Quinn
+1	E. Rainey	Rainey
+1	H.J. Rainwater	Rainwater
+1	H.Rainwater	Rainwater
+20	J. Ramsey	Ramsey
+8	J.Ramsey	Ramsey
+114	J.S. Ramsey	Ramsey
+44	Ramsey	Ramsey
+2	E. Raney	Raney
+1	E.C Raney	Raney
+11	E.C. Raney	Raney
+11	Raney	Raney
+1	Rasnick	Rasnick
+1	Rayes-R	Rayes-R
+8	Read	Read
+2	J.W. Reddoch	Reddoch
+1	Reddoch	Reddoch
+2	Reddock	Reddock
+1	L. Redman	Redman
+3	M. Reed	Reed
+4	Reed	Reed
+11	S. Reilly	Reilly
+8	S.E. Reilly	Reilly
+1	K. Relyea	Relyea
+9	Relyea	Relyea
+36	Remington	Remington
+1	Rescio	Rescio
+1	Reyes-R	Reyes-R
+3	J. Reynolds	Reynolds
+26	R. Reynolds	Reynolds
+2	Richmond	Richmond
+1	Rivas	Rivas
+1	R. Roberts	Roberts
+2	D. Robertson	Robertson
+7	Robertson	Robertson
+2	Robins	Robins
+1	R.M. Roecker	Roecker
+3	Rogers	Rogers
+1	S.O. Rohamnn	Rohamnn
+148	Rohmann	Rohmann
+62	S. Rohmann	Rohmann
+403	S.O. Rohmann	Rohmann
+1	D. Rome	Rome
+5	D.L. Rome	Rome
+9	Rome	Rome
+13	F. Rose	Rose
+10	Francis Rose	Rose
+1	Rose	Rose
+4	R.L.S.	S
+6	L. Sadler	Sadler
+3	Salisbury	Salisbury
+1	Sandifer	Sandifer
+1	M. Sapp	Sapp
+17	Schleuss	Schleuss
+2	Schneidan	Schneidan
+8	E. Schwartz	Schwartz
+2	D.Scott	Scott
+4	Scott	Scott
+1	J. Scruggs	Scruggs
+1	Scruggs	Scruggs
+2	I. Seale	Seale
+1	D. Selby	Selby
+1	M.D. Serpas	Serpas
+2	Michelle D. Serpas	Serpas
+5	Shaffer	Shaffer
+3	Sharp	Sharp
+2	Shepard	Shepard
+2	Sherer	Sherer
+1	Anton Bruun Cruise 9	Ship Personnel
+9	Cruise 18-B	Ship Personnel
+58	M/V Anna Inez	Ship Personnel
+1	M/V Capt. Jim	Ship Personnel
+1	M/V Lyman	Ship Personnel
+6	M/V Oregon	Ship Personnel
+1	M/V Oregon 612-A	Ship Personnel
+39	R/V Anton Bruun	Ship Personnel
+3	R/V Anton Bruun Cruise 18-B	Ship Personnel
+1	Shoemaker	Shoemaker
+2	C.R. Shoop	Shoop
+3	R. Shoop	Shoop
+2	R.Shoop	Shoop
+12	Shoop	Shoop
+1	B. Siebenaler	Siebenaler
+1	E.M. Simmons	Simmons
+2	Simmons	Simmons
+25	S. Simpson	Simpson
+5	Simpson	Simpson
+2	L. Slechta	Slechta
+11	A. Sliwa	Sliwa
+17	A. Smalley	Smalley
+22	A.E. Smalley	Smalley
+2	A.E.Smalley	Smalley
+1	G. Smalley	Smalley
+90	Smalley	Smalley
+2	Smalleys	Smalleys
+1	C. Smith	Smith
+15	C.L. Smith	Smith
+1	C.S. Smith	Smith
+3	Smith	Smith
+4	Smyth	Smyth
+30	Sobczak	Sobczak
+4	F. Sogandares	Sogandares
+16	Sogandares	Sogandares
+12	F. Sogandares-B	Sogandares-B
+9	F. Sogandares-B.	Sogandares-B
+14	Sogandares-B.	Sogandares-B
+2	E. Solis	Solis
+1	Solis	Solis
+1	Sorenesen	Sorenesen
+141	P. Sorensen	Sorensen
+106	P.Y. Sorensen	Sorensen
+97	Sorensen	Sorensen
+5	Sorenson	Sorenson
+2	D. Speranza	Speranza
+11	D.E. Speranza	Speranza
+5	D.Speranza	Speranza
+3	Speranza	Speranza
+1	Springer	Springer
+2	S.L. Sprouse	Sprouse
+2	E.F. Stacy	Stacy
+4	Starnes	Starnes
+2	Statemen	Statemen
+3	Stauffer	Stauffer
+8	D. Stein	Stein
+9	D.W. Stein	Stein
+3	Steinbach	Steinbach
+1	T.Steinbach	Steinbach
+3	M. Stevens	Stevens
+3	Stevens	Stevens
+2	A. Stevenson	Stevenson
+5	Stevenson	Stevenson
+1	D.Stone	Stone
+19	Stone	Stone
+1	W. Stone	Stone
+2	L. Straub	Straub
+2	Straub	Straub
+1	Strawn	Strawn
+1	B. Sudararaj	Sudararaj
+3	Sudararaj	Sudararaj
+7	B. Sundararaj	Sundararaj
+8	Sundararaj	Sundararaj
+3	A. Suttkus	Suttkus
+1	A.J. Suttkus	Suttkus
+2	J. S. Suttkus	Suttkus
+57	J. Suttkus	Suttkus
+15	J.E. Suttkus	Suttkus
+1411	J.S. Suttkus	Suttkus
+1	J.Suttkus	Suttkus
+16	Jayson S. Suttkus	Suttkus
+16	JS Suttkus	Suttkus
+1	M. Suttkus	Suttkus
+5	M.G. Suttkus	Suttkus
+3	R. D. Suttkus	Suttkus
+13	R. Suttkus	Suttkus
+9482	R.D. Suttkus	Suttkus
+2	R.L. Suttkus	Suttkus
+3	R.S. Suttkus	Suttkus
+22	R.Suttkus	Suttkus
+1	Ramona Suttkus	Suttkus
+1	H. Suzuki	Suzuki
+10	Suzuki	Suzuki
+4	Swingle	Swingle
+3	Takemoto	Takemoto
+3	Talbot	Talbot
+1	R. Tapp	Tapp
+6	D. Taylor	Taylor
+4	Taylor	Taylor
+2	F. Thomas	Thomas
+10	Thomas	Thomas
+6	J.Thomerson	Thomerson
+25	Thomerson	Thomerson
+1	B. Thompson	Thompson
+126	B.A. Thompson	Thompson
+1	J.R. Thompson	Thompson
+1	P.R. Thompson	Thompson
+315	Thompson	Thompson
+2	Tinkle	Tinkle
+6	Tomoff	Tomoff
+83	Trau	Trau
+8	V. Trau	Trau
+140	V.C. Trau	Trau
+5	V.Trau	Trau
+7	Veronica C. Trau	Trau
+10	F.W. Trease	Trease
+1	R.P. Tucker	Tucker
+5	S.T. Tucker	Tucker
+2	J.Turner	Turner
+2	Umlauf	Umlauf
+1	Unknown	Unknown
+8	S.Utter	Utter
+2	P.Vieto	Vieto
+15	Vieto	Vieto
+1	P. Viosca	Viosca
+3	Viosca	Viosca
+1	Vokes	Vokes
+3	Wagner	Wagner
+44	Waitt	Waitt
+2	Walker	Walker
+1	V. Walters	Walters
+1	Walters	Walters
+4	Warkentin	Warkentin
+8	M. Warren	Warren
+12	M.A. Warren	Warren
+2	M.Warren	Warren
+15	Warren	Warren
+1	Webb	Webb
+3	D. Weide	Weide
+1	G. Weiss	Weiss
+1	M.A. Wheeler	Wheeler
+40	D. White	White
+24	D.A. White	White
+10	White	White
+1	Whitney	Whitney
+3	J.S. Whitsell	Whitsell
+1	J.Whitsell	Whitsell
+4	Whitsell	Whitsell
+3	W. Wieland	Wieland
+2	W.Wieland	Wieland
+3	R.L. Wigley	Wigley
+7	C. Williams	Williams
+1	J. Williams	Williams
+3	J.D. WIlliams	WIlliams
+2	S.Williams	Williams
+20	Williams	Williams
+1	Williard	Williard
+2	J. Willis	Willis
+4	Winkler	Winkler
+2	Winn	Winn
+1	W.S. Woolcott	Woolcott
+1	C. Wooley	Wooley
+4	Wright	Wright
+2	R. Yerger	Yerger
+20	R.W. Yerger	Yerger
+12	Yerger	Yerger
+1	Zieman	Zieman
+5	Zirn	Zirn
